@@ -6,8 +6,10 @@ import React, { useState, useEffect, useRef } from 'react';
 const NavBar = () => {
     const navItems = ['About', 'Experience', 'Projects', 'Skills','Education', 'Community', 'Contact'];
     
-    // State to track visibility (isVisible)
+    // State to track scroll visibility (isVisible) - for scroll-hiding logic
     const [isVisible, setIsVisible] = useState(true);
+    // NEW: State for mobile menu open/close
+    const [isMenuOpen, setIsMenuOpen] = useState(false); 
     // Ref to track the last scroll position mutably (this is key for performance and correct behavior)
     const scrollRef = useRef(0);
 
@@ -43,6 +45,11 @@ const NavBar = () => {
         };
     }, []); // Dependency array is now empty, creating handleScroll only once
 
+    // NEW: Toggle function for the mobile menu
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
         <nav 
             className={`
@@ -51,9 +58,39 @@ const NavBar = () => {
                 ${isVisible ? 'translate-y-0' : '-translate-y-full'} 
             `}
         >
-            <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+            {/* Modified container to handle mobile button and stacking */}
+            <div className="container mx-auto flex flex-wrap justify-between items-center"> 
                 <span className="text-2xl font-extrabold text-yellow-400 tracking-wider">Jiya Saraf</span>
-                <div className="flex space-x-6 text-sm mt-3 sm:mt-0">
+                
+                {/* NEW: Mobile Menu Button (Hamburger/X) - Visible only on small screens */}
+                <button 
+                    onClick={toggleMenu}
+                    className="sm:hidden p-2 text-gray-300 hover:text-yellow-400"
+                    aria-expanded={isMenuOpen}
+                    aria-controls="mobile-menu"
+                >
+                    {/* SVG for the icon - X when open, Hamburger when closed */}
+                    <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="24" 
+                        height="24" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                    >
+                        {isMenuOpen ? (
+                            <path d="M18 6L6 18M6 6l12 12" /> // X Icon
+                        ) : (
+                            <path d="M4 6h16M4 12h16M4 18h16" /> // Hamburger Icon
+                        )}
+                    </svg>
+                </button>
+
+                {/* Navigation Links - Desktop View: Always visible on sm: and up */}
+                <div className="hidden sm:flex space-x-6 text-sm">
                     {navItems.map(item => (
                         <a 
                             key={item}
@@ -65,6 +102,25 @@ const NavBar = () => {
                         </a>
                     ))}
                 </div>
+
+                {/* NEW: Navigation Links - Mobile Dropdown View: Only visible when isMenuOpen is true AND on small screens */}
+                {isMenuOpen && (
+                    <div 
+                        id="mobile-menu"
+                        className="w-full mt-3 flex flex-col items-center space-y-3 pb-2 sm:hidden"
+                    >
+                        {navItems.map(item => (
+                            <a 
+                                key={item}
+                                href={`#${item.toLowerCase()}`} 
+                                onClick={toggleMenu} // Close menu on click/tap
+                                className="w-full text-center py-2 font-medium text-gray-300 hover:text-yellow-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
+                            >
+                                {item}
+                            </a>
+                        ))}
+                    </div>
+                )}
             </div>
         </nav>
     );

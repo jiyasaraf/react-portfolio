@@ -131,6 +131,7 @@ const uniqueCategories = ['All Projects', ...new Set(projectData.map(p => p.cate
 // ----------------------------------------------------------------------------------
 const ProjectCard = ({ project }) => {
   return (
+    // Responsive width classes: w-full on mobile, w-1/2 on small screens, w-1/3 on large, w-1/4 on extra large
     <div className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-4">
       <div className="bg-gray-800 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 ease-in-out border border-gray-700 hover:shadow-yellow-500/30 hover:border-yellow-500 hover:-translate-y-1 group">
         
@@ -223,6 +224,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Filter Buttons (Matching the design request) */}
+        {/* Added flex-wrap and adjusted mx-auto to ensure buttons wrap nicely on small screens */}
         <div className="flex flex-wrap justify-center gap-3 mb-12 p-3 bg-gray-800 rounded-full max-w-fit mx-auto shadow-inner border border-gray-700">
           {uniqueCategories.map(category => (
             <button

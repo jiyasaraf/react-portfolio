@@ -5,7 +5,7 @@ export default function AboutSection() {
     const placeholderImage = 'jiya.jpg';
 
     return (
-        <section id="about" className="bg-slate-900">
+        <section id="about" className="py-16 bg-slate-900">
             <div className="container mx-auto px-4 max-w-6xl">
                 {/* Section Title */}
                 
@@ -16,6 +16,7 @@ export default function AboutSection() {
                     <div className="w-16 h-1.5 bg-yellow-500 rounded-full mx-auto mt-2"></div>
                 </div>
 
+                {/* Responsive Flex Container: Stacks on mobile, side-by-side on large screens */}
                 <div className="flex flex-col lg:flex-row items-center lg:space-x-12">
                     {/* Left Column: Image */}
                     <div className="w-full lg:w-1/3 mb-8 lg:mb-0 flex justify-center">
@@ -46,8 +47,8 @@ export default function AboutSection() {
                             My goal is to solve challenging problems and contribute meaningfully to the field of Artificial Intelligence. I am constantly exploring new technologies and am dedicated to writing clean, maintainable, and efficient code. Let's connect and build something innovative!
                         </p>
                         
-                        {/* Key Info Points */}
-                        <div className="pt-4 flex flex-wrap gap-x-10 gap-y-4 text-sm font-semibold text-gray-900">
+                        {/* Key Info Points: Added flex-wrap for mobile responsiveness */}
+                        <div className="pt-4 flex flex-wrap gap-x-10 gap-y-4 text-sm font-semibold text-gray-300">
                             <span><b>Location:</b> Jaipur, India</span>
                             <span><b>Focus: </b>AIML | DataScience</span>
                             <span><b>Status: </b> Open to collaboration</span>

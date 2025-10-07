@@ -116,6 +116,7 @@ export default function SkillsSection() {
                 </div>
 
                 {/* Filter Buttons */}
+                {/* Added flex-wrap for better wrapping on very narrow screens */}
                 <div className="flex flex-wrap justify-center gap-3 mb-12">
                     {allCategoryKeys.map(key => (
                         <button
@@ -139,9 +140,9 @@ export default function SkillsSection() {
                     {skillCategoriesData.map(category => (
                         <div 
                             key={category.id} 
-                            // Conditional rendering based on filter
+                            // Adjusted sizing for better small-screen fit: w-full on mobile, w-[48%] on tablet, and then smaller fractions on desktop
                             className={`
-                                w-full md:w-[48%] lg:w-1/3 xl:w-1/4 transition-all duration-500 ease-in-out
+                                w-full sm:w-[48%] lg:w-1/3 xl:w-1/4 transition-all duration-500 ease-in-out
                                 ${activeFilter === 'All Skills' || activeFilter === category.id 
                                     ? 'opacity-100 block' 
                                     : 'opacity-0 hidden' // Hide the box

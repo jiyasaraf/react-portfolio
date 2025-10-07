@@ -32,8 +32,6 @@ const educationData = [
     },
 ];
 
-// Removed CourseChip component as we are switching to a simpler layout.
-
 // Component for a single timeline entry
 const EducationEntry = ({ entry, isLast }) => {
     return (
