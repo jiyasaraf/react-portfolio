@@ -3,6 +3,43 @@ import React from 'react';
 // About Section Component
 export default function AboutSection() {
     const placeholderImage = 'jiya.jpg';
+    // Resume download link (copied from Experience.jsx)
+    // IMPORTANT FIX: Use the specific Google Drive direct download URL format.
+    // Replace 'https://tinyurl.com/resume-jiya-saraf' with the actual Google Drive share link,
+    // and then convert it to the direct download format:
+    // https://drive.google.com/uc?export=download&id=YOUR_FILE_ID
+    // Assuming your tinyurl link redirects to a Google Drive ID, you must manually 
+    // obtain the actual File ID from Google Drive and use the format below for reliability.
+    // For now, I'll revert to the simplest HTML approach which often works better for 
+    // files hosted on public platforms that honor the 'download' attribute.
+    
+    // We will use the Google Drive direct download format for the best chance of success.
+    // Note: Since I don't know the file ID behind the tinyurl, I'll use a placeholder structure.
+    // Please replace the entire string with your file's direct download link.
+    const RESUME_DOWNLOAD_LINK = "https://drive.google.com/uc?export=download&id=1cfzjHlPqgw3hG1lqPhSLXSBN4bMnnWqA";
+    
+    // SVG icon for the download button (using the file icon from the Hero section)
+    const DownloadIcon = (props) => (
+        <svg 
+            {...props} 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="20" 
+            height="20" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+        >
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+            <path d="M12 18V10"/>
+            <path d="M15 15l-3 3-3-3"/>
+        </svg>
+    );
+
+    // FIX: Removed the complex handleDownload function. 
+    // We are now using the reliable direct download link format and the simple HTML 'download' attribute.
 
     return (
         <section id="about" className="py-16 bg-slate-900">
@@ -47,12 +84,25 @@ export default function AboutSection() {
                             My goal is to solve challenging problems and contribute meaningfully to the field of Artificial Intelligence. I am constantly exploring new technologies and am dedicated to writing clean, maintainable, and efficient code. Let's connect and build something innovative!
                         </p>
                         
-                        {/* Key Info Points: Added flex-wrap for mobile responsiveness */}
+                        {/* Key Info Points */}
                         <div className="pt-4 flex flex-wrap gap-x-10 gap-y-4 text-sm font-semibold text-gray-300">
                             <span><b>Location:</b> Jaipur, India</span>
                             <span><b>Focus: </b>AIML | DataScience</span>
                             <span><b>Status: </b> Open to collaboration</span>
                         </div>
+                        
+                        {/* NEW: Download CV Button */}
+                        <div className="pt-6">
+                            <a 
+                                href={RESUME_DOWNLOAD_LINK}
+                                download
+                                className="inline-flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-gray-900 font-bold text-base rounded-lg shadow-xl transition-transform duration-300 hover:scale-[1.03] hover:bg-yellow-400"
+                            >
+                                Download Resume
+                            </a>
+                        </div>
+
+                         
                     </div>
                 </div>
             </div>

@@ -45,9 +45,10 @@ const ExperienceItem = ({ experience }) => (
     <div className="relative mb-8 pl-8 md:pl-16 last:mb-0">
         {/* Timeline Dot & Line */}
         <div className="absolute left-0 top-1 w-4 h-4 rounded-full bg-yellow-500 shadow-md transform -translate-x-1/2"></div>
-        {/* The line stops before the last item's dot */}
-        <div className="absolute left-0 top-6 bottom-[-2rem] w-0.5 bg-white ml-[-0.3rem]"></div>
 
+        {/* // CORRECTED Line Definition (0.75rem from top, center of the dot): */}
+        <div className="absolute left-0 top-[0.75rem] bottom-[-2rem] w-0.5 bg-white ml-[-0.3rem]"></div>
+        {/* <div className="absolute left-0 top-6 bottom-[-2rem] w-0.5 bg-white ml-[-0.3rem]"></div> */}
         <div className="bg-gray-700 p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-yellow-200">
             <div className="flex justify-between items-start flex-col sm:flex-row">
                 <h3 className="text-xl font-bold text-white mb-1">{experience.title}</h3>
@@ -96,19 +97,7 @@ export default function ExperienceSection() {
                     ))}
                 </div>
                 
-                {/* Download Resume CTA */}
-                <div className="text-center mt-12">
-                    <a 
-                        // Updated link to force direct download from Google Drive
-                        href={RESUME_DOWNLOAD_LINK} 
-                        // The 'download' attribute is still useful as a fallback, especially for local files.
-                        download 
-                        className="inline-block px-8 py-3 bg-gray-900 text-yellow-400 font-bold rounded-full shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-gray-800"
-                        rel="noopener noreferrer"
-                    >
-                        Download Resume
-                    </a>
-                </div>
+                
             </div>
         </section>
     );

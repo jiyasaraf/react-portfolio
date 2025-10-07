@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import NavBar from './components/Navbar.jsx';
 import Home from './components/Home.jsx'; 
 import AboutSection from './components/About.jsx';
 import ExperienceSection from './components/Experience.jsx';
@@ -12,6 +13,7 @@ export default function App() {
     <div className="min-h-screen bg-white font-sans antialiased">
       
       {/* Renders the NavBar, HeroSection, and placeholders for all other content. */}
+      <NavBar/>
       <Home />
       <AboutSection/>
       <ExperienceSection/>

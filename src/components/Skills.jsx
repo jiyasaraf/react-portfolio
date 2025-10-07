@@ -13,7 +13,7 @@ const skillCategoriesData = [
         id: 'WebDev',
         title: 'Web Development',
         icon: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z',
-        skills: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Tailwind CSS', 'React Native']
+        skills: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Tailwind CSS', 'React']
 
     },
     {
