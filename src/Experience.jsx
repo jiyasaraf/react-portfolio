@@ -8,7 +8,7 @@ const experienceData = [
         company: "SubMastery",
         duration: "Aug 2025 - Sep 2025 (Remote)",
         description: [
-            "Developed <b>AuditorMate.ai</b> to convert auditor notes into ISO-compliant reports.",
+            "Developed AuditorMate.ai to convert auditor notes into ISO-compliant reports.",
             "Built an AI image generator for LinkedIn headshots using computer vision.",
             "Automated workflows in n8n for poster generation and reporting tasks."
         ],
