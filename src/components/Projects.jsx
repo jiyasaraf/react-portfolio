@@ -129,63 +129,67 @@ const uniqueCategories = ['All Projects', ...new Set(projectData.map(p => p.cate
 // ----------------------------------------------------------------------------------
 // ProjectCard Component - Renders a single project card.
 // ----------------------------------------------------------------------------------
+
 const ProjectCard = ({ project }) => {
   return (
-    // Responsive width classes: w-full on mobile, w-1/2 on small screens, w-1/3 on large, w-1/4 on extra large
+    // Responsive width: full on mobile, half on small screens, one-third on large, one-fourth on extra large
     <div className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-4">
-      <div className="bg-gray-800 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 ease-in-out border border-gray-700 hover:shadow-yellow-500/30 hover:border-yellow-500 hover:-translate-y-1 group">
-        
-        {/* Image Placeholder (since you didn't provide image URLs) */}
+      {/* Fixed height card with responsive layout and hover effects */}
+      <div className="bg-gray-800 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 ease-in-out border border-gray-700 hover:shadow-yellow-500/30 hover:border-yellow-500 hover:-translate-y-1 group flex flex-col h-full">
+
+        {/* Image Section */}
         <div className="h-48 overflow-hidden bg-gray-900 flex items-center justify-center">
           <img 
-            src={project.imagePlaceholder} // Use the specific placeholder for visual variety
-            alt={project.title} 
+            src={project.imagePlaceholder}
+            alt={project.title}
             className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-            // Simple fallback for image loading errors
             onError={(e) => {
-              e.target.onerror = null; 
+              e.target.onerror = null;
               e.target.src = 'https://placehold.co/400x250/374151/ffffff?text=Image+Error';
             }}
           />
         </div>
 
-        <div className="p-5 text-white">
+        {/* Content Section */}
+        <div className="p-5 text-white flex flex-col flex-grow">
           <h3 className="text-xl font-bold mb-2 text-yellow-400">{project.title}</h3>
           
-          <p className="text-sm text-gray-400 mb-4 h-12 overflow-hidden">{project.description}</p>
-          
+          <p className="text-sm text-gray-400 mb-4 line-clamp-3">
+            {project.description}
+          </p>
+
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-4">
-            {project.tags.slice(0, 4).map(tag => ( // Limit to first 4 tags for cleanliness
+            {project.tags.slice(0, 4).map(tag => (
               <span key={tag} className="px-3 py-1 text-xs font-medium text-purple-200 bg-purple-900 rounded-full">
                 {tag}
               </span>
             ))}
           </div>
 
+          {/* Spacer pushes buttons to bottom */}
+          <div className="flex-grow"></div>
+
           {/* Action Links */}
-          <div className="flex space-x-3 border-t border-gray-700 pt-4">
-            {/* GitHub Repo Link */}
+          <div className="flex space-x-3 border-t border-gray-700 pt-4 mt-auto">
             <a 
-              href={project.repo} 
-              target="_blank" 
+              href={project.repo}
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center text-sm font-semibold text-gray-300 hover:text-yellow-400 transition-colors"
               title="View Source Code"
             >
-              <GithubIcon className="w-4 h-4 mr-1"/> {/* Using custom icon */}
+              <GithubIcon className="w-4 h-4 mr-1" />
               <span>Repository</span>
             </a>
             
-            {/* Additional Link Placeholder (e.g., Live Demo) */}
             <a 
-              href="#" // Placeholder for a live demo link
+              href="#"
               className="flex items-center text-sm font-semibold text-gray-300 hover:text-yellow-400 transition-colors opacity-70"
               title="No Live Demo"
               onClick={(e) => e.preventDefault()}
             >
-              {/* <CodeIcon className="w-4 h-4 mr-1"/> Using custom icon */}
-              {/* <span>Demo (N/A)</span> */}
+              {/* Placeholder for live demo */}
             </a>
           </div>
         </div>
@@ -193,6 +197,7 @@ const ProjectCard = ({ project }) => {
     </div>
   );
 };
+
 
 // ----------------------------------------------------------------------------------
 // ProjectsSection Component - Main component with filtering logic.
