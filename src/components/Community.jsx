@@ -21,7 +21,7 @@ const communityEvents = [
     description: "Led core operations for AceHack 4.0, managing event logistics, mentorship, and participant engagement for Rajasthan's largest student-run hackathon.",
     category: "Hackathons",
     role: "Core Team",
-    link: "https://www.linkedin.com/feed/update/urn:li:activity:7198751566373713920/",
+    link: "https://www.linkedin.com/posts/jiyasaraf_acehack4-hackathon2025-hackathonorganizer-activity-7318113422481506305-hZXJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD-Ti4wBbjosz2heZUhXkor0wFgggNWUlnY",
     source: "LinkedIn Post",
     tags: ["Event Management", "Team Leadership", "Logistics", "Community Building"],
   },
@@ -31,29 +31,20 @@ const communityEvents = [
     description: "Contributed to the organizing committee, focusing on technical support and mentorship for participants during the 3.0 edition of the hackathon.",
     category: "Hackathons",
     role: "Committee Member",
-    link: "https://example.com/acehack3",
+    
     source: "Event Page",
     tags: ["Mentorship", "Technical Support", "Coordination"],
   },
-  {
-    id: 3,
-    title: "Active Open Source Contributor",
-    description: "Regularly contribute to open-source projects, focusing on Python libraries and ML model deployment scripts to improve community tools.",
-    category: "Open Source",
-    role: "Contributor",
-    link: "https://github.com/your-username",
-    source: "GitHub Profile",
-    tags: ["Python", "MLOps", "Documentation", "Git"],
-  },
+  
   {
     id: 4,
-    title: "Data Science Workshop Leader",
-    description: "Conducted workshops on Data Science fundamentals and Pandas/NumPy for university peers, aiming to promote practical application of ML skills.",
+    title: "The Speech Society",
+    description: "Member of the core committee, actively organizing events, workshops, and public speaking forums.Responsible for building communication and leadership skills among members.",
     category: "Workshops",
     role: "Host/Speaker",
     link: "#",
     source: "Internal Event",
-    tags: ["Teaching", "Public Speaking", "Data Science", "Python"],
+    tags: ["Teaching", "Public Speaking"],
   },
 ];
 
@@ -81,17 +72,7 @@ const CommunityCard = ({ event }) => (
       </div>
     </div>
     
-    <div className="px-6 py-4 bg-gray-900 border-t border-gray-700">
-      <a
-        href={event.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-yellow-400 hover:text-yellow-300 text-sm font-semibold inline-flex items-center transition-colors"
-      >
-        {event.source}
-        <ExternalLinkIcon className="ml-2 w-4 h-4" />
-      </a>
-    </div>
+    
   </div>
 );
 
