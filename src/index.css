@@ -1,4 +1,12 @@
+
+
 @import "tailwindcss";
-html{
+
+html {
   scroll-behavior: smooth;
+}
+
+/* Utility fallback for any calc() used inline that Tailwind can’t parse */
+:root {
+  --line-gap: 20px;
 }

@@ -30,8 +30,8 @@ export default function NavBar() {
   return (
     <nav
       className={
-        "sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm shadow-md transition-transform duration-300 ease-in-out"
-        + (isVisible ? " translate-y-0" : " -translate-y-full")
+        `sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm shadow-md transition-transform duration-300 ease-in-out` +
+        (isVisible ? "" : " -translate-y-full")
       }
     >
       <div className="container mx-auto flex flex-wrap justify-between items-center px-4 py-3">
@@ -39,11 +39,12 @@ export default function NavBar() {
           Jiya Saraf
         </a>
 
-        {/* Mobile menu button */}
+        {/* Mobile menu button & dropdown using <details> for simplicity */}
         <details className="relative md:hidden">
           <summary className="list-none cursor-pointer select-none rounded-md px-3 py-2 text-sm text-gray-200 hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400/40">
             Menu
           </summary>
+          {/* Dropdown content position and width adjusted to be fully responsive */}
           <div className="absolute right-0 mt-2 w-48 rounded-md bg-gray-800/95 backdrop-blur p-2 shadow-lg ring-1 ring-black/10">
             {navItems.map((item) => (
               <a
@@ -63,7 +64,7 @@ export default function NavBar() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm text-gray-200 hover:text-yellow-300 hover:bg-gray-800/60"
+              className="px-3 py-2 text-sm font-medium text-gray-200 rounded-md hover:bg-gray-700 hover:text-yellow-300 transition-colors duration-200"
             >
               {item.label}
             </a>

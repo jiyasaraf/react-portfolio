@@ -23,11 +23,9 @@ export default function App() {
       <CommunitySection/>
       <ContactSection/>
 
-      {/* Footer (Kept here as it's a global structural element) */}
-      <footer className="text-center py-6 bg-gray-800 text-gray-400 text-sm border-t border-gray-700">
-        &copy; 2025 Jiya Saraf | Designed and Built with React, Vite, and Tailwind CSS
-      </footer>
+      
     </div>
   );
 }
+
 
