@@ -6,7 +6,7 @@ const HeroSection = () => {
     { name: "GitHub", icon: "M12 2a10 10 0 0 0-3.16 19.4c.5.1.7-.2.7-.5v-2c-3.3.7-4-1.6-4-1.6-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1 0 1.7 1.1 1.7 1.1.9 1.7 2.3 1.2 2.9.9.1-.7.4-1.2.7-1.4-2.2-.2-4.5-1.1-4.5-4.9 0-1.1.4-2.1 1-2.9-.1-.2-.5-1.4.1-2.9 0 0 .8-.3 2.7 1.1A9.5 9.5 0 0 1 12 6.8c.8 0 1.5.1 2.2.3 1.9-1.4 2.7-1.1 2.7-1.1.6 1.5.2 2.7.1 2.9.6.8 1 1.8 1 2.9 0 3.8-2.3 4.7-4.5 4.9.4.4.7 1 .7 2v2.5c0 .3.2.6.7.5A10 10 0 0 0 12 2z", href: "https://github.com/jiyasaraf" },
     { name: "LeetCode", icon: "M10.5 13.5h-2v-2h2v2zm0 4h-2v-2h2v2zM21 9V6a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V9zm-2 10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-4h14v4zm0-6H5V6a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v7z", href: "https://leetcode.com/u/JS1804" },
     { name: "Linktree", icon: "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM9 10v4h6v-4H9zm6-2h-6V4h6v4zM9 16v4h6v-4H9z", href: "https://linktr.ee/jiyasaraf" },
-    { name: "Resume", icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v4h4v12H6z", href: "https://tinyurl.com/cv-jiyasaraf" },
+    { name: "Resume", icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v4h4v12H6z", href: "https://tinyurl.com/jiya-saraf-cv" },
   ];
   const heroImagePlaceholder = "portfolio-1.png";
 

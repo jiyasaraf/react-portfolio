@@ -31,12 +31,12 @@ const projectData = [
   },
   {
     id: 2,
-    title: 'Professional Image Generator',
+    title: 'Blogify',
     // description: 'Headshot/image generator that produces polished outputs using hosted diffusion models.',
-    repo: 'https://github.com/jiyasaraf/professional-image-generator',
-    tags: ['Next.js', 'TypeScript', 'AI/ML APIs', 'REST', 'WebDev'],
-    category: 'Gen AI / Full Stack',
-    imagePlaceholder: 'https://placehold.co/400x250/3B0764/D8B4FE?text=AI+Headshots'
+    repo: 'https://github.com/jiyasaraf/blog-post-website',
+    tags: ['Node.js', 'React JS', 'Express JS', 'REST', 'WebDev'],
+    category: 'Full Stack',
+    imagePlaceholder: 'https://placehold.co/400x250/3B0764/D8B4FE?text=Blogify'
   },
  
   {
@@ -45,12 +45,12 @@ const projectData = [
     // description: 'LLM-powered helper that generates algorithm outlines or code scaffolds from natural-language prompts using Llama-3 style models.',
     repo: 'https://github.com/jiyasaraf/Algorithm-Generator-Using--Llama-3.0',
     tags: ['Python', 'JS', 'LLaMA 3', 'Prompt Engineering', 'Gen AI'],
-    category: 'Gen AI / Full Stack',
+    category: 'Gen AI',
     imagePlaceholder: 'https://placehold.co/400x250/6D28D9/F5D0FE?text=LLM+Algorithms'
   },
   {
     id: 5,
-    title: 'DocuMind (Assignment Manager)',
+    title: 'DocuMind (Doc AI Assistant)',
     // description: 'Document parser summarizing, answering, and assessing user content understanding.',
     repo: 'https://github.com/jiyasaraf/EZ-Assignment',
     tags: ['Gen AI', 'Python', 'Document Parsing'],

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutSection() {
   const placeholderImage = "jiya.jpg"; // Using a placeholder for consistency
-  const RESUME_DOWNLOAD_LINK = "#"; // Replace with your actual link
+  const RESUME_DOWNLOAD_LINK = "https://drive.google.com/file/d/1U1i07dcLF28ziNJjkgmK9AfLo4vA-pok/view?usp=sharing"; // Replace with your actual link
 
   const DownloadIcon = (props) => (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
